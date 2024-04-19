@@ -1,0 +1,28 @@
+<mat-dialog-content class="bg-slate-900">
+
+  <div class="flex">
+    <div class="w-1/2 flex flex-col justify-center items-center">
+      <a href="#">
+        <img class="img-animal rounded-t-lg w-80 rounded-lg" [src]="obj.img" alt="" />
+      </a>
+      <p class="text-white text-2xl font-bold text-center mt-5"> {{obj.name}} </p>
+
+    </div>
+
+    <div class="w-1/2 flex flex-col justify-start items-center text-white text-md">
+      <ul>
+        <li>Idade: <span class="font-medium text-lg">{{obj.age}}</span></li>
+        <li>Cor: <span class="font-medium text-lg">{{obj.color}}</span></li>
+        <li>Sexo: <span class="font-medium text-lg">{{obj.gender}}</span> </li>
+        <li>Castrado(a): <span class="font-medium text-lg">{{obj.castrate ? 'Sim' : 'Não'}}</span></li>
+        <li>Vacinas: <span class="font-medium text-lg">{{obj.vaccines}}</span></li>
+        <li>Cidade: <span class="font-medium text-lg">{{obj.city}}</span></li>
+        <li>Pelo: <span class="font-medium text-lg">{{obj.pelo}}</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <button mat-dialog-close class="text-white p-2 rounded mt-10 absolute right-2 close">X</button>
+
+</mat-dialog-content>
