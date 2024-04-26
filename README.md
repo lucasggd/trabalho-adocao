@@ -1,11 +1,20 @@
-# trabalho-adocao
+# Plataforma de Adoção de Animais de Estimação - AdotAI
 
-Trabalho para faculdade, site para adoção de animais de estimação
+AdotAI é uma plataforma dedicada à adoção de animais de estimação, facilitando o processo para ambos os adotantes e tutores. Qualquer pessoa pode submeter um animal para adoção preenchendo um formulário simples, o qual será enviado para análise por um administrador antes de ser publicado.
 
-Nome fictício "AdotAI"
+<b>Funcionalidades Principais:</b>
 
-Home page mostra animais para adoção de forma paginada, com scroll infinte.
+1. <b>Vitrine de Adoção:</b> A página inicial apresenta uma listagem paginada de animais disponíveis para adoção, com um recurso de scroll infinito para uma experiência de navegação contínua.
+2. <b>Detalhes do Animal:</b> Os interessados podem visualizar informações detalhadas sobre cada animal, auxiliando na decisão de adoção.
+3. <b>Formulário de Contato:</b> Os usuários têm acesso a um formulário para esclarecer dúvidas, fazer sugestões, registrar reclamações ou submeter um animal para adoção.
+4. <b>Área de Administrador:</b> Um sistema de login seguro permite que administradores gerenciem as submissões de adoção e as listagens de animais disponíveis.
 
+<b>Tecnologias Utilizadas:</b>
+
+<ul>
+    <li>Front-end: Desenvolvido em Angular com Angular Material e Tailwind CSS, garantindo uma interface moderna e responsiva.</li>
+    <li>Back-end: Implementado em Java utilizando Spring Boot e Liquibase, com integração ao banco de dados MySQL para garantir a segurança e eficiência do sistema.</li>
+</ul>
 <img src="/front-end/src/assets/homepage.png"/>
 
 Detalhes animal com algumas informações adicionais sobre o animal de interesse.
@@ -24,11 +33,17 @@ Tabela de animais para adoção.
 
 <img src="/front-end/src/assets/tabelaadmin.png"/>
 
-Créditos:
-Logo tipo www.aspaan.org.br
+<b>Créditos:</b>
 
-Recursos
-Angular Material
-www.flowbite.com
+<ul>
+    <li><b>Logotipo:</b> O logotipo foi inspirado em www.aspaan.org.br.</li>
+</ul>
 
-Imagens meramente ilustrativas
+<b>Recursos:</b>
+
+<ul>
+    <li><b>Angular </b>Material: Utilizado para a construção de componentes e elementos visuais da interface.</li>
+    <li><b>Flowbite:</b> Recursos adicionais de design foram obtidos em www.flowbite.com.</li>
+</ul>
+
+<b>Observação:</b> As imagens utilizadas são meramente ilustrativas e visam proporcionar uma experiência visual agradável aos usuários.
