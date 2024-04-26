@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="01" author="lucas.dias">
+        <createTable tableName="user">
+
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="username" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="status" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <insert tableName="user">
+            <column name="username" value="lucao"/>
+            <column name="status" valueNumeric="1"/>
+        </insert>
+
+        <createIndex tableName="user" indexName="user_username_index" unique="true">
+            <column name="username"/>
+        </createIndex>
+
+        <createTable tableName="user_password">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="CHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="user_password">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="password" value="1308dfed71297a652cc42a390e211489"/>
+        </insert>
+
+        <addForeignKeyConstraint baseTableName="user_password" baseColumnNames="user_id" constraintName="user_user_password_fk"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"/>
+
+        <createIndex tableName="user_password" indexName="user_password_index" unique="true">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="02" author="lucas.dias">
+        <createTable tableName="animal">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="animal_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="years" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="months" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="days" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="about" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="castrate" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vaccines" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="other" type="varchar"/>
+            <column name="phone_tutor" type="bitint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="response_by" type="bigint"/>
+            <column name="response_at" type="DATETIME"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="animal" baseColumnNames="response_by" constraintName="animal_response_by_fk"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
