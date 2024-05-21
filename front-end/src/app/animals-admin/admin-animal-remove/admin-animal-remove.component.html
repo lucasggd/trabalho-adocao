@@ -1,0 +1,16 @@
+<mat-dialog-content class="bg-gray-800 p-10">
+  <h2 class="text-white font-bold text-xl mb-5">{{animal?.animalName ?? animal?.email}}</h2>
+
+  <span class="text-white text-md">Realmente deseja remover o registro ID {{animal?.id}} ?</span>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="bg-gray-900">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-1" (click)="delete()">
+    Remover
+  </button>
+
+  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-1" (click)="cancel()">
+    Cancelar
+  </button>
+</mat-dialog-actions>

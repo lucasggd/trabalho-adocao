@@ -63,13 +63,13 @@
             <column name="id" autoIncrement="true" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="email" type="varchar">
+            <column name="email" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="animal_name" type="varchar">
+            <column name="animal_name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="color" type="varchar">
+            <column name="color" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="years" type="bigint">
@@ -81,13 +81,13 @@
             <column name="days" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="city" type="varchar">
+            <column name="city" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="about" type="varchar">
+            <column name="about" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="gender" type="bit">
+            <column name="gender" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="castrate" type="boolean">
@@ -96,8 +96,8 @@
             <column name="vaccines" type="boolean">
                 <constraints nullable="false"/>
             </column>
-            <column name="other" type="varchar"/>
-            <column name="phone_tutor" type="bitint">
+            <column name="other" type="varchar(255)"/>
+            <column name="phone_tutor" type="bigint">
                 <constraints nullable="false"/>
             </column>
             <column name="status" type="bigint">
@@ -112,4 +112,33 @@
                                  referencedColumnNames="id"/>
     </changeSet>
 
+    <changeSet id="03" author="lucas.dias">
+        <addColumn tableName="animal">
+            <column name="img" type="varchar(1000)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="04" author="vinicius.bueno">
+        <createTable tableName="contact">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="message" type="varchar(5000)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="05" author="vinicius.bueno">
+        <addColumn tableName="contact">
+            <column name="subject" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

@@ -17,7 +17,8 @@ public class AnimalDTO {
     private Long days;
     private String city;
     private String about;
-    private Long gender;
+    private String gender;
+    private String img;
     private boolean castrate;
     private boolean vaccines;
     private String other;

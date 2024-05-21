@@ -1,0 +1,35 @@
+<mat-dialog-content class="bg-gray-800 p-10">
+
+  <form class="space-y-8">
+    <div>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">ID</label>
+      <input [value]="contact.id" readonly
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+    </div>
+    <div>
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+      <input [value]="contact.email" readonly
+        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+    </div>
+    <div>
+      <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Assunto</label>
+      <input [value]="contact.subject" readonly
+        class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+    </div>
+    <div class="sm:col-span-2">
+      <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Sua
+        mensagem</label>
+      <textarea [value]="contact.message" readonly id="message" rows="6"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+    </div>
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="bg-gray-900">
+  <button
+    class="disabled:bg-gray-800 disabled:text-gray-700 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="dialogRef.close()">
+    Fechar
+  </button>
+</mat-dialog-actions>

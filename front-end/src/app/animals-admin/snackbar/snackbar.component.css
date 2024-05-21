@@ -1,0 +1,7 @@
+::ng-deep .mat-mdc-snack-bar-container {
+  &.bg-panel {
+    --mdc-snackbar-container-color: rgb(22 163 74);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}

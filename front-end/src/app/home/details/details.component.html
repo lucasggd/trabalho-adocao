@@ -5,19 +5,21 @@
       <a href="#">
         <img class="img-animal rounded-t-lg w-80 rounded-lg" [src]="obj.img" alt="" />
       </a>
-      <p class="text-white text-2xl font-bold text-center mt-5"> {{obj.name}} </p>
+      <p class="text-white text-2xl font-bold text-center mt-5 text-white"> {{obj.animalName}} </p>
+      <span class="font-medium text-md font-normal text-white mt-2">{{obj.about}}</span>
 
     </div>
 
     <div class="w-1/2 flex flex-col justify-start items-center text-white text-md dark:text-gray-400">
       <ul>
-        <li>Idade: <span class="font-medium text-lg text-white">{{obj.age}}</span></li>
         <li>Cor: <span class="font-medium text-lg text-white">{{obj.color}}</span></li>
         <li>Sexo: <span class="font-medium text-lg text-white">{{obj.gender}}</span> </li>
         <li>Castrado(a): <span class="font-medium text-lg text-white">{{obj.castrate ? 'Sim' : 'Não'}}</span></li>
-        <li>Vacinas: <span class="font-medium text-lg text-white">{{obj.vaccines}}</span></li>
+        <li>Vacinas: <span class="font-medium text-lg text-white">{{obj.vaccines ? 'Em dia' : 'Pendente'}}</span></li>
         <li>Cidade: <span class="font-medium text-lg text-white">{{obj.city}}</span></li>
-        <li>Pelo: <span class="font-medium text-lg text-white">{{obj.pelo}}</span></li>
+        <li>Anos: <span class="font-medium text-lg text-white">{{obj.years}}</span></li>
+        <li>Meses: <span class="font-medium text-lg text-white">{{obj.months}}</span></li>
+        <li>Dias: <span class="font-medium text-lg text-white">{{obj.days}}</span></li>
       </ul>
     </div>
   </div>

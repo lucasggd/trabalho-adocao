@@ -3,24 +3,25 @@ package trab.com.trab.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import trab.com.trab.model.dto.UserDTO;
-import trab.com.trab.service.AuthenticateService;
+import trab.com.trab.model.Contact;
+import trab.com.trab.service.AnimalService;
+import trab.com.trab.service.ContactService;
 
-@Controller
 @RestController
-@RequestMapping("/authenticate")
-public class AuthenticateController {
+@RequestMapping("contact")
+public class ContactController {
 
     @Autowired
-    private AuthenticateService service;
+    private ContactService contactService;
 
     @PostMapping("")
-    private ResponseEntity<?> login(@RequestBody UserDTO user) {
-        return new ResponseEntity<>(service.authenticate(user.getUsername(), user.getPassword()), HttpStatus.OK);
+    private ResponseEntity<?> save(@RequestBody Contact contact) {
+        return new ResponseEntity<>(contactService.save(contact), HttpStatus.OK);
     }
+
 }

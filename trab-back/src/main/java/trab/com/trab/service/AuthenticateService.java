@@ -17,7 +17,7 @@ import java.util.Optional;
 @Service
 public class AuthenticateService {
 
-    private static final String SECRET_KEY = "y3BcEdH3MbQeShVmYq3t6w9zGCCF3JDNcRfUjWnZr4u7xcAsDhhLKaPdSgVkYp2sy3BcEdH3MbQeShVmYq3t6w9zGCCF3JDNcRfUjWnZr4u7xcAsDhhLKaPdSgVkYp2s";
+    private static final String SECRET_KEY = "y3BcEdH3MbQeShVmYq3t6w9zGCCF3JDNcRfUjWnZr4u7xcAsDhhLKaPdSgVCCF3JDNcRfUjWnZr4u7xcAsDhhLKaPdSgVkYp2s";
 
     @Autowired
     private UserPasswordRepository repository;

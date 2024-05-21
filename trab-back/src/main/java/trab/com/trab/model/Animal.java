@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "run")
+@Table(name = "animal")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Animal {
@@ -49,7 +49,7 @@ public class Animal {
     private String about;
 
     @Column(name = "gender", nullable = false)
-    private Long gender;
+    private String gender;
 
     @Column(name = "castrate", nullable = false)
     private boolean castrate;
@@ -57,11 +57,14 @@ public class Animal {
     @Column(name = "vaccines", nullable = false)
     private boolean vaccines;
 
-    @Column(name = "other", nullable = false)
+    @Column(name = "other")
     private String other;
 
     @Column(name = "phone_tutor", nullable = false)
     private Long phoneTutor;
+
+    @Column(name = "img", nullable = false)
+    private String img;
 
     @Column(name = "status", nullable = false)
     private AnimalStatusEnum status;
@@ -91,6 +94,7 @@ public class Animal {
         this.vaccines = animalRequest.isVaccines();
         this.other = animalRequest.getOther();
         this.phoneTutor = animalRequest.getPhoneTutor();
-        this.status = AnimalStatusEnum.PENDING;
+        this.img = animalRequest.getImg();
+        this.status = AnimalStatusEnum.ACCEPT;
     }
 }

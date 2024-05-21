@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
-    List<Animal> findByStatus(AnimalStatusEnum status);
+    List<Animal> findByStatusOrderByIdDesc(AnimalStatusEnum status);
 
+    List<Animal> findAllByOrderByIdDesc();
 }

@@ -3,6 +3,7 @@ package trab.com.trab.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +18,9 @@ public class AnimalController {
     @Autowired
     private AnimalService runRequestService;
 
-    @PostMapping("request")
-    private ResponseEntity<?> newRequest(@RequestBody AnimalDTO runRequest) {
-        return new ResponseEntity<>(runRequestService.newRequest(runRequest), HttpStatus.CREATED);
+    @GetMapping("")
+    private ResponseEntity<?> all() {
+        return new ResponseEntity<>(runRequestService.findAllAccepted(), HttpStatus.OK);
     }
 
 }

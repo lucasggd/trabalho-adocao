@@ -6,28 +6,31 @@
       contato conosco para oferecer um lar para animais em adoção ou se estiver enfrentando alguma dificuldade para
       adotar, por favor, não hesite em nos contatar. Estamos à disposição para ajudá-lo.
     </p>
-    <form action="#" class="space-y-8">
+    <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Email:
+      suporte@exemplo.com
+    </p>
+    <form [formGroup]="form" class="space-y-8">
       <div>
         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seu email</label>
-        <input type="email" id="email"
+        <input formControlName="email"
           class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-          placeholder="email@email.com" required>
+          placeholder="email@email.com">
       </div>
       <div>
         <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Assunto</label>
-        <input type="text" id="subject"
+        <input formControlName="subject"
           class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-          placeholder="Ex: Gostaria de colocar um animal para adoção" required>
+          placeholder="Ex: Gostaria de colocar um animal para adoção">
       </div>
       <div class="sm:col-span-2">
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Sua
           mensagem</label>
-        <textarea id="message" rows="6"
+        <textarea formControlName="message" id="message" rows="6"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
           placeholder="Descreva oque dejesa..."></textarea>
       </div>
-      <button type="submit"
-        class="py-3 px-5 bg-blue-600 hover:bg-blue-800 transition text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+      <button [disabled]="!form.valid" (click)="save()"
+        class="disabled:bg-gray-800 disabled:text-gray-700 py-3 px-5 bg-blue-600 hover:bg-blue-800 transition text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         Enviar</button>
     </form>
   </div>

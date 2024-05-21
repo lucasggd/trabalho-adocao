@@ -27,7 +27,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
         InterceptorRegistration ir = registry.addInterceptor(authorizationInterceptor);
         ir.addPathPatterns("/**");
         ir.excludePathPatterns("/authenticate");
-        ir.excludePathPatterns("/category");
-        ir.excludePathPatterns("/category/{id}/runs");
+        ir.excludePathPatterns("/animal");
+        ir.excludePathPatterns("/contact");
     }
 }

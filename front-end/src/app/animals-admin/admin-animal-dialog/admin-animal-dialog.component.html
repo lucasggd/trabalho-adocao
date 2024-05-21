@@ -1,0 +1,105 @@
+<mat-dialog-content class="bg-gray-800 p-10">
+  <form [formGroup]="form" class="grid md:grid-cols-5 md:gap-6 w-full">
+    <div class="mb-5 px-1 w-12/12">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email*</label>
+      <input formControlName="email" type="email"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="name@flowbite.com" required />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do animal*</label>
+      <input formControlName="animalName" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cor do animal*</label>
+      <input formControlName="color" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Anos*</label>
+      <input formControlName="years" type="number"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Meses*</label>
+      <input formControlName="months" type="number"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dias*</label>
+      <input formControlName="days" type="number"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cidade*</label>
+      <input formControlName="city" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sobre*</label>
+      <input formControlName="about" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Img*</label>
+      <input formControlName="img" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sexo*</label>
+      <input formControlName="gender" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Outro</label>
+      <input formControlName="other" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+
+    <div class="mb-5 px-1 flex items-end">
+      <div class="flex items-center h-5">
+        <input formControlName="castrate" type="checkbox" value=""
+          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+          required />
+      </div>
+      <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Castração</label>
+    </div>
+
+    <div class="mb-5 px-1 flex items-end">
+      <div class="flex items-center h-5">
+        <input formControlName="vaccines" type="checkbox" value=""
+          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+          required />
+      </div>
+      <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vacinas</label>
+    </div>
+
+    <div class="mb-5 px-1">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefone tutor*</label>
+      <input formControlName="phoneTutor" type="number"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+    </div>
+  </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="bg-gray-900">
+  <button [disabled]="!form.get('phoneTutor')?.value"
+    class="disabled:bg-gray-800 disabled:text-gray-700 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="save()">
+    Salvar
+  </button>
+</mat-dialog-actions>

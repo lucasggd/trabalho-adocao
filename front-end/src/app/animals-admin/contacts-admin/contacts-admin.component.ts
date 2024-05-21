@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { AdminAnimalDialogComponent } from './admin-animal-dialog/admin-animal-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { AnimalService } from '../services/animal.service';
-import { AdminService } from '../services/admin.service';
-import { AdminAnimalRemoveComponent } from './admin-animal-remove/admin-animal-remove.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackbarComponent } from './snackbar/snackbar.component';
+import { AdminService } from 'src/app/services/admin.service';
+import { AdminAnimalDialogComponent } from '../admin-animal-dialog/admin-animal-dialog.component';
+import { AdminAnimalRemoveComponent } from '../admin-animal-remove/admin-animal-remove.component';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
+import { AdminContactDialogComponent } from '../admin-contact-dialog/admin-contact-dialog.component';
 
 @Component({
-  selector: 'app-animals-admin',
-  templateUrl: './animals-admin.component.html',
-  styleUrls: ['./animals-admin.component.css'],
+  selector: 'app-contacts-admin',
+  templateUrl: './contacts-admin.component.html',
+  styleUrls: ['./contacts-admin.component.css'],
 })
-export class AnimalsAdminComponent {
+export class ContactsAdminComponent {
   datatable: any = [];
 
   constructor(
@@ -26,7 +26,7 @@ export class AnimalsAdminComponent {
   }
 
   refresh(): void {
-    this.service.findAll().subscribe((data) => {
+    this.service.findAllContact().subscribe((data) => {
       this.datatable = data;
     });
   }
@@ -38,9 +38,9 @@ export class AnimalsAdminComponent {
     });
   }
 
-  openDialog(animal?: any) {
-    const dialogRef = this.dialog.open(AdminAnimalDialogComponent, {
-      data: { animal: animal },
+  openDialog(contact?: any) {
+    const dialogRef = this.dialog.open(AdminContactDialogComponent, {
+      data: { contact: contact },
       width: '80%',
     });
 

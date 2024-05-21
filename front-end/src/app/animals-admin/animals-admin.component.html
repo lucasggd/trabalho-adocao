@@ -1,6 +1,13 @@
 <div class="mx-80 min-h-screen">
 
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
+  <div class="my-5 flex justify-end">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openDialog()">
+      Novo
+    </button>
+  </div>
+
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
@@ -17,7 +24,13 @@
             Cidade
           </th>
           <th scope="col" class="px-6 py-3">
-            Idade
+            Anos
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Meses
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Dias
           </th>
           <th scope="col" class="px-6 py-3">
             Status
@@ -34,7 +47,7 @@
             {{data.id}}
           </td>
           <td class="px-6 py-4">
-            {{data.name}}
+            {{data.animalName}}
           </td>
           <td class="px-6 py-4">
             {{data.color}}
@@ -43,22 +56,29 @@
             {{data.city}}
           </td>
           <td class="px-6 py-4">
-            {{data.age}}
+            {{data.years}}
           </td>
           <td class="px-6 py-4">
-            <div class="bg-green-600 text-white font-bold text-center rounded"
-              [ngClass]="{'bg-green-600': data.status === 1, 'bg-red-600': data.status === 0}">
-              {{data.status === 1 ? 'Ativo' : 'Desabilitado'}}
+            {{data.months}}
+          </td>
+          <td class="px-6 py-4">
+            {{data.days}}
+          </td>
+          <td class="px-6 py-4">
+            <div class="bg-green-600 text-white font-bold rounded text-center"
+              [ngClass]="{'bg-green-600': data.status === 'ACCEPT' || data.status === 'ADOPTED', 'bg-red-600': data.status != 'ACCEPT' && data.status != 'ADOPTED'}">
+              {{data.status}}
             </div>
           </td>
           <td class="px-6 py-4 text-right">
-            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-            <span href="#" class="ml-4 font-medium text-red-600 dark:text-red-500 hover:underline">Excluir</span>
+            <span class="font-medium text-blue-600 dark:text-blue-500 cursor-pointer"
+              (click)="openDialog(data)">Editar</span>
+            <span class="ml-4 font-medium text-red-600 dark:text-red-500 cursor-pointer"
+              (click)="removeDialog(data)">Excluir</span>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-
 
 </div>
