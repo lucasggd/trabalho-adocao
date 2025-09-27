@@ -10,6 +10,7 @@ import trab.com.trab.model.enums.AnimalStatusEnum;
 import trab.com.trab.repository.AnimalRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnimalService {
@@ -38,5 +39,9 @@ public class AnimalService {
 
     public Animal update(Animal animal){
         return animalRepository.save(animal);
+    }
+
+    public Optional<Animal> findByName(String name) {
+        return animalRepository.findByAnimalName(name);
     }
 }

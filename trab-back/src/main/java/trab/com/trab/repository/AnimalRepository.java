@@ -6,6 +6,7 @@ import trab.com.trab.model.Animal;
 import trab.com.trab.model.enums.AnimalStatusEnum;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
@@ -13,4 +14,6 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
     List<Animal> findByStatusOrderByIdDesc(AnimalStatusEnum status);
 
     List<Animal> findAllByOrderByIdDesc();
+
+    Optional<Animal> findByAnimalName(String name);
 }
