@@ -141,4 +141,16 @@
             </column>
         </addColumn>
     </changeSet>
+
+    <changeSet id="06" author="lucas">
+        <insert tableName="user">
+            <column name="username" value="admin"/>
+            <column name="status" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="user_password">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="password" value="202cb962ac59075b964b07152d234b70"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

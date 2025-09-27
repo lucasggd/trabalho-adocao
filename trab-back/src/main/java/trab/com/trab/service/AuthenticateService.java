@@ -36,7 +36,7 @@ public class AuthenticateService {
 
     }
 
-    private String passwordToMD5(String password) {
+    public String passwordToMD5(String password) {
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("MD5");

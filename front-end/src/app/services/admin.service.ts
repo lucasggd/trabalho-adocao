@@ -18,6 +18,16 @@ export class AdminService {
     });
   }
 
+  findAllUser(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this._http.get<any>(`http://localhost:8080/admin/user/all`, {
+      headers: headers,
+    });
+  }
+
   findAllContact(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -42,12 +52,32 @@ export class AdminService {
     );
   }
 
+  saveUser(body: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this._http.post<any>(`http://localhost:8080/admin/user/new`, body, {
+      headers: headers,
+    });
+  }
+
   update(body: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
     return this._http.put<any>(`http://localhost:8080/admin/animal`, body, {
+      headers: headers,
+    });
+  }
+
+  updateUser(body: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this._http.put<any>(`http://localhost:8080/admin/user`, body, {
       headers: headers,
     });
   }
@@ -63,6 +93,16 @@ export class AdminService {
         headers: headers,
       }
     );
+  }
+
+  deleteUser(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this._http.delete<any>(`http://localhost:8080/admin/user/${id}`, {
+      headers: headers,
+    });
   }
 
   deleteContact(id: number): Observable<any> {

@@ -20,6 +20,8 @@ import { SnackbarComponent } from './animals-admin/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ContactsAdminComponent } from './animals-admin/contacts-admin/contacts-admin.component';
 import { AdminContactDialogComponent } from './animals-admin/admin-contact-dialog/admin-contact-dialog.component';
+import { UserAdminComponent } from './animals-admin/user-admin/user-admin.component';
+import { UserAdminDialogComponent } from './animals-admin/user-admin-dialog/user-admin-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { AdminContactDialogComponent } from './animals-admin/admin-contact-dialo
     SnackbarComponent,
     ContactsAdminComponent,
     AdminContactDialogComponent,
+    UserAdminComponent,
+    UserAdminDialogComponent,
   ],
   imports: [
     BrowserModule,

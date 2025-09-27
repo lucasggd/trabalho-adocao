@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import trab.com.trab.model.Animal;
 import trab.com.trab.model.dto.AnimalDTO;
+import trab.com.trab.model.dto.UserDTO;
 import trab.com.trab.service.AnimalService;
 import trab.com.trab.service.ContactService;
+import trab.com.trab.service.UserService;
 
 /**
  * @author lucas.dias
@@ -29,9 +31,17 @@ public class AdminController {
     @Autowired
     private ContactService contactService;
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping("animal/new")
     private ResponseEntity<?> newRequest(@RequestBody AnimalDTO runRequest) {
         return new ResponseEntity<>(runRequestService.newRequest(runRequest), HttpStatus.CREATED);
+    }
+
+    @PostMapping("user/new")
+    private ResponseEntity<?> newUser(@RequestBody UserDTO userDTO) {
+        return new ResponseEntity<>(userService.newUser(userDTO), HttpStatus.CREATED);
     }
 
     @DeleteMapping("animal/delete/{id}")
@@ -45,9 +55,19 @@ public class AdminController {
         return new ResponseEntity<>(runRequestService.update(body), HttpStatus.OK);
     }
 
+    @PutMapping("user")
+    private ResponseEntity<?> update(@RequestBody UserDTO body) {
+        return new ResponseEntity<>(userService.update(body), HttpStatus.OK);
+    }
+
     @GetMapping("animal/all")
     private ResponseEntity<?> all() {
         return new ResponseEntity<>(runRequestService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("user/all")
+    private ResponseEntity<?> allUsers() {
+        return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("contact/all")
@@ -58,6 +78,12 @@ public class AdminController {
     @DeleteMapping("contact/{id}")
     private ResponseEntity<?> deleteContact(@PathVariable Long id) {
         contactService.deleteContact(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("user/{id}")
+    private ResponseEntity<?> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

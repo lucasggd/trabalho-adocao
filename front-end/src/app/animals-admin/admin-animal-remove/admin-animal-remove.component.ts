@@ -26,6 +26,11 @@ export class AdminAnimalRemoveComponent {
         this.animal = null;
         this.dialogRef.close();
       });
+    } else if (this.animal.username) {
+      this.service.deleteUser(this.animal.id).subscribe((data) => {
+        this.animal = null;
+        this.dialogRef.close();
+      });
     } else {
       this.service.deleteContact(this.animal.id).subscribe((data) => {
         this.animal = null;

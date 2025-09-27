@@ -3,6 +3,7 @@ package trab.com.trab.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import trab.com.trab.model.dto.UserDTO;
 import trab.com.trab.model.enums.UserStatusEnum;
 
 import java.sql.Blob;
@@ -35,5 +36,11 @@ public class User {
 
     public User(Long id) {
         this.id = id;
+    }
+
+    public User(UserDTO userDTO) {
+        this.id = userDTO.getId();
+        this.username = userDTO.getUsername();
+        this.status = UserStatusEnum.NOT_CONFIRMED;
     }
 }

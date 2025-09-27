@@ -6,6 +6,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AnimalsAdminComponent } from './animals-admin/animals-admin.component';
 import { AdminGuard } from './guard/admin.guard';
 import { ContactsAdminComponent } from './animals-admin/contacts-admin/contacts-admin.component';
+import { UserAdminComponent } from './animals-admin/user-admin/user-admin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,11 @@ const routes: Routes = [
   {
     path: 'records/animals',
     component: AnimalsAdminComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'records/users',
+    component: UserAdminComponent,
     canActivate: [AdminGuard],
   },
   {
