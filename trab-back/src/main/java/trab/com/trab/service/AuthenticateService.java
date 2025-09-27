@@ -33,7 +33,6 @@ public class AuthenticateService {
         hashMap.put("t", generateToken(user.get().getId(), user.get().getUser().getUsername()));
 
         return hashMap;
-
     }
 
     public String passwordToMD5(String password) {
