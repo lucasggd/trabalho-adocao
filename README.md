@@ -64,6 +64,10 @@ Tabela de animais para adoção.
 
 <ol> <li>Acesse a pasta do front-end: <pre><code>cd front-end</code></pre> </li> <li>Instale as dependências: <pre><code>npm install</code></pre> </li> <li>Inicie o servidor de desenvolvimento: <pre><code>ng serve</code></pre> </li> <li>Acesse o front-end no navegador: <pre><code>http://localhost:4200</code></pre> </li> </ol>
 
+<b>CI/CD</b>
+
+<img src="/front-end/src/assets/cicd.png"/>
+
 <b>Testes automatizados: unitário, integracão e E2E</b>
 
 Os testes foram feitos em codigo nas classes: AnimalController e trabApplicationTests
