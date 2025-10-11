@@ -1,4 +1,4 @@
-name: CI/CD - AdotAI
+name: CI/CD - AdotAI (Gradle)
 
 on:
   push:
@@ -21,23 +21,19 @@ jobs:
           java-version: "17"
           distribution: "temurin"
 
-      - name: 📦 Instalar dependências
-        run: mvn clean install -DskipTests
+      # Se seu Gradle estiver em uma pasta (ex: backend), ajuste aqui
+      - name: 🔧 Permitir execução do Gradle Wrapper
+        working-directory: ./trab-back
+        run: chmod +x gradlew
+
+      - name: 🏗️ Build do projeto
+        working-directory: ./trab-back
+        run: ./gradlew build -x test
 
       - name: 🧪 Rodar Testes
-        run: mvn test
+        working-directory: ./trab-back
+        run: ./gradlew test
 
-      - name: 📊 Gerar Relatório de Teste
+      - name: 📊 Resultado
         if: success()
-        run: |
-          echo "✅ Todos os testes passaram com sucesso!"
-
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: 🚀 Deploy Simulado
-        run: echo "dokcer compose up -d --build trab"
+        run: echo "✅ Build e testes concluídos com sucesso!"
