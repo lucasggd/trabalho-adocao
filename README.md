@@ -47,3 +47,30 @@ Tabela de animais para adoção.
 </ul>
 
 <b>Observação:</b> As imagens utilizadas são meramente ilustrativas e visam proporcionar uma experiência visual agradável aos usuários.
+
+<b>Como Instalar e Iniciar o Projeto:</b>
+
+<ul> <li><b>Pré-requisitos:</b> <ul> <li>Node.js (versão 16 ou superior)</li> <li>Angular CLI (versão 15)</li> <li>Java 17</li> <li>Maven (caso não esteja embutido no IntelliJ)</li> <li>MySQL Server</li> <li>IntelliJ IDEA (Community ou Ultimate)</li> </ul> </li> </ul>
+
+<b>Configuração do Banco de Dados (MySQL):</b>
+
+<ol> <li>Crie um banco de dados no MySQL: <pre><code>CREATE DATABASE adotai;</code></pre> </li> <li>Configure o arquivo <code>application.properties</code> (ou <code>application.yml</code>) no back-end: <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/adotai?useSSL=false&serverTimezone=UTC spring.datasource.username=root spring.datasource.password=senha spring.jpa.hibernate.ddl-auto=update spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.xml </code></pre> </li> <li>O Liquibase criará automaticamente as tabelas na primeira execução.</li> </ol>
+
+<b>Back-end (Java 17 + Spring Boot):</b>
+
+<ol> <li>Abra o projeto <b>back-end</b> no IntelliJ IDEA.</li> <li>Aguarde o IntelliJ baixar as dependências do Maven automaticamente.</li> <li>Verifique se o projeto está configurado para usar o Java 17: <ul> <li>Vá em <code>File > Project Structure > Project SDK</code> e selecione <b>Java 17</b>.</li> </ul> </li> <li>Execute o projeto: <ul> <li>Localize a classe principal <code>AdotAIApplication.java</code>.</li> <li>Clique em <b>Run ▶️</b> para iniciar a aplicação.</li> </ul> </li> <li>O servidor iniciará em: <pre><code>http://localhost:8080</code></pre> </li> </ol>
+
+<b>Front-end (Angular 15):</b>
+
+<ol> <li>Acesse a pasta do front-end: <pre><code>cd front-end</code></pre> </li> <li>Instale as dependências: <pre><code>npm install</code></pre> </li> <li>Inicie o servidor de desenvolvimento: <pre><code>ng serve</code></pre> </li> <li>Acesse o front-end no navegador: <pre><code>http://localhost:4200</code></pre> </li> </ol>
+
+<b>Testes automatizados POSTMAN</b>
+
+<img src="/front-end/src/assets/testAuth.png"/>
+
+<img src="/front-end/src/assets/testFailAuth.png"/>
+
+<img src="/front-end/src/assets/testAnimal.png"/>
+
+<img src="/front-end/src/assets/testContacts.png"/>
+
