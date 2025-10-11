@@ -3,7 +3,9 @@ package trab.com.trab.service;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import trab.com.trab.model.UserPassword;
 import trab.com.trab.repository.UserPasswordRepository;
 
@@ -23,11 +25,11 @@ public class AuthenticateService {
     private UserPasswordRepository repository;
 
     public HashMap<String, String> authenticate(String username, String password) {
-        if (username == null || password == null) return null;
+        if (username == null || password == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario e/ou senha inválido!");
 
         Optional<UserPassword> user = this.repository.findByUserUsernameAndPassword(username, passwordToMD5(password));
 
-        if (user.isEmpty()) return null;
+        if (user.isEmpty()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario e/ou senha inválido!");
 
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("t", generateToken(user.get().getId(), user.get().getUser().getUsername()));
