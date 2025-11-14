@@ -26,7 +26,7 @@ class trabApplicationTests {
 
     @Test
     void deveFalharComCredenciaisInvalidas() {
-        boolean autenticado = authenticateService.authenticate("admin", "senhaErrada") != null;
+        boolean autenticado = authenticateService.testauthenticate("admin", "senhaErrada") != null;
         assertFalse(autenticado);
     }
 

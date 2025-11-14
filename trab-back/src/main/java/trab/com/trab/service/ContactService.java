@@ -6,6 +6,7 @@ import trab.com.trab.model.Contact;
 import trab.com.trab.repository.ContactRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -20,6 +21,10 @@ public class ContactService {
 
     public List<Contact> findAll(){
         return contactRepository.findAllByOrderByIdDesc();
+    }
+
+    public Optional<Contact> findBySubject(String subject){
+        return contactRepository.findBySubject(subject);
     }
 
     public void deleteContact(Long id){

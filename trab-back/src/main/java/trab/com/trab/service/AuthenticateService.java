@@ -37,6 +37,19 @@ public class AuthenticateService {
         return hashMap;
     }
 
+    public HashMap<String, String> testauthenticate(String username, String password) {
+        if (username == null || password == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuario e/ou senha inválido!");
+
+        Optional<UserPassword> user = this.repository.findByUserUsernameAndPassword(username, passwordToMD5(password));
+
+        if (user.isEmpty()) return null;
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("t", generateToken(user.get().getId(), user.get().getUser().getUsername()));
+
+        return hashMap;
+    }
+
     public String passwordToMD5(String password) {
         MessageDigest md = null;
         try {

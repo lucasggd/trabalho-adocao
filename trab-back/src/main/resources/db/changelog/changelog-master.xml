@@ -153,4 +153,84 @@
             <column name="password" value="202cb962ac59075b964b07152d234b70"/>
         </insert>
     </changeSet>
+
+    <changeSet id="07" author="lucas">
+        <insert tableName="animal">
+            <column name="id" value="100"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="animal_name" value="Astolfo"/>
+            <column name="color" value="Branco"/>
+            <column name="years" value="0"/>
+            <column name="months" value="1"/>
+            <column name="days" value="12"/>
+            <column name="city" value="Bauru SP"/>
+            <column name="gender" value="Macho"/>
+            <column name="castrate" valueBoolean="true"/>
+            <column name="vaccines" valueBoolean="true"/>
+            <column name="other" value="Muito fofo"/>
+            <column name="phone_tutor" value="14999999999"/>
+            <column name="img" value="https://www.doglife.com.br/blog/assets/post/racas-cachorro-pequeno-5ec33658190dad1466b3fcaa/ra%C3%A7as%20de%20cachorro%20pequeno.webp"/>
+            <column name="status" value="1"/>
+            <column name="about" value="Meu coração é cheio de amor… só falta alguém pra receber"/>
+        </insert>
+
+        <insert tableName="animal">
+            <column name="id" value="101"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="animal_name" value="Rosa"/>
+            <column name="color" value="Preta"/>
+            <column name="years" value="0"/>
+            <column name="months" value="0"/>
+            <column name="days" value="28"/>
+            <column name="city" value="Bauru SP"/>
+            <column name="gender" value="Femea"/>
+            <column name="castrate" valueBoolean="true"/>
+            <column name="vaccines" valueBoolean="true"/>
+            <column name="other" value="Amigavel"/>
+            <column name="phone_tutor" value="14999999999"/>
+            <column name="img" value="https://love.doghero.com.br/wp-content/uploads/2018/06/shutterstock_1058092325.jpg"/>
+            <column name="status" value="1"/>
+            <column name="about" value="Meu coração é cheio de amor… só falta alguém pra receber"/>
+        </insert>
+
+        <insert tableName="animal">
+            <column name="id" value="102"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="animal_name" value="Fred"/>
+            <column name="color" value="Caramelo"/>
+            <column name="years" value="1"/>
+            <column name="months" value="3"/>
+            <column name="days" value="1"/>
+            <column name="city" value="Bauru SP"/>
+            <column name="gender" value="Macho"/>
+            <column name="castrate" valueBoolean="true"/>
+            <column name="vaccines" valueBoolean="true"/>
+            <column name="other" value="Muito fofo"/>
+            <column name="phone_tutor" value="14999999999"/>
+            <column name="img" value="https://www.pedigree.com.br/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2401/files/2024-09/celebre-o-dia-nacional-da-adocao-de-animais_0.jpg"/>
+            <column name="status" value="1"/>
+            <column name="about" value="Meu coração é cheio de amor… só falta alguém pra receber"/>
+        </insert>
+
+        <insert tableName="contact">
+            <column name="id" value="100"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="subject" value="Felipe para adocao"/>
+            <column name="message" value="Minha cachorrinha deu cria de 7 filhotes, esse foi o unico que ficou."/>
+        </insert>
+
+        <insert tableName="contact">
+            <column name="id" value="101"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="subject" value="Meu dog trovão"/>
+            <column name="message" value="O cachorrinho disse: Meu coração é cheio de amor… só falta alguém pra receber"/>
+        </insert>
+
+        <insert tableName="contact">
+            <column name="id" value="102"/>
+            <column name="email" value="email@usuario.com"/>
+            <column name="subject" value="Cachorro da lucia"/>
+            <column name="message" value="De uma ninhada de 7, esse é o último esperando por adoção. Ele só quer amor e um cantinho pra chamar de seu!"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

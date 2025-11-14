@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import trab.com.trab.model.Animal;
+import trab.com.trab.model.Contact;
 import trab.com.trab.model.dto.AnimalDTO;
 import trab.com.trab.service.AnimalService;
+import trab.com.trab.service.ContactService;
 
 import java.util.Optional;
 
@@ -22,6 +24,9 @@ public class AnimalController {
 
     @Autowired
     private AnimalService animalService;
+
+    @Autowired
+    private ContactService contactService;
 
     @Test
     void testeCadastro() {
@@ -52,6 +57,21 @@ public class AnimalController {
 
     @Test
     void testeE2E() {
+        Contact contact = new Contact();
+        contact.setEmail("teste@e2e.com");
+        contact.setSubject("TESTE E2E");
+        contact.setMessage("TESTE E2E");
+
+        var contactCreated = contactService.save(contact);
+        contactCreated.setSubject("E2E 2 2 2");
+        contactService.save(contactCreated);
+
+        Optional<Contact> opContact = contactService.findBySubject("E2E 2 2 2");
+        assertFalse(opContact.isEmpty());
+        contactService.deleteContact(opContact.get().getId());
+        opContact = contactService.findBySubject("E2E 2 2 2");
+        assertTrue(opContact.isEmpty());
+
         AnimalDTO animalDTO = new AnimalDTO();
 
         animalDTO.setEmail("exemplo@email.com");
