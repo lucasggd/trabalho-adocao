@@ -82,3 +82,12 @@ Os testes foram feitos em codigo nas classes: AnimalController e trabApplication
 
 <img src="/front-end/src/assets/testContacts.png"/>
 
+
+==============================================
+USUARIO MASSA
+==============================================
+
+usuario: admin
+senha: 123
+
+
