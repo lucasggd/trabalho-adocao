@@ -82,7 +82,7 @@ Os testes foram feitos em codigo nas classes: AnimalController e trabApplication
 
 <img src="/front-end/src/assets/testContacts.png"/>
 
-<b>TDD<b/> do usuário válido ou inválido
+<b>TDD</b> do usuário válido ou inválido
 
 Para aplicar TDD no sistema, primeiro criamos os testes da parte de autenticação. No teste, verificamos dois cenários: autenticação com dados corretos e autenticação com dados errados. Como os métodos ainda não estavam funcionando completamente, os testes falharam inicialmente (fase RED).
 
@@ -90,7 +90,7 @@ Depois disso, ajustamos os métodos do serviço de autenticação (authenticate 
 
 Com tudo funcionando, revisamos o código para deixar mais organizado e consistente, mas sempre garantindo que os testes continuassem passando (fase REFACTOR). Dessa forma, o ciclo TDD foi seguido: escrever o teste → ver falhar → implementar → ver passar → melhorar.
 
-<b>USUARIO MASSA<b/>
+<b>USUARIO MASSA</b>
 
 usuario: admin
 senha: 123
